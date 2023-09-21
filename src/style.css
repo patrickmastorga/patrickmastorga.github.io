@@ -1,0 +1,644 @@
+/*
+Theme Name: Dark Joe
+Theme URI: http://themewagon.com/demo/DarkJoe/
+Author: ThemeWagon
+Author URI: http://themewagon.com/
+Description: Slick One page portfolio site for Freelancers powered by Bootstrap 3.
+Version: 1.14.11
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+Tags: dark, white, one page, parallax, responsive-layout, full-width-template
+Text Domain: darkjoe
+*/
+
+/**
+* Table of Contents:
+*
+* 01.0 - Universal
+* 02.0 - Header
+* 03.0 - Navigation
+* 04.0 - Services
+* 05.0 - Portfolio
+* 06.0 - Testimonial
+* 07.0 - Contact
+* 08.0 - Footer
+* 09.0 - Responsive Fixes
+* -----------------------------------------------------------------------------
+*/
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  01 - Universal
+/////////////////////////////////////////////////////////////////////*/
+
+html, body {
+    height:100%;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Dosis', sans-serif;
+}
+
+a {
+	color: #ffffff;
+	transition: 0.4s ease all;
+	outline: none;
+	text-decoration: none;
+}
+
+a:hover,a:active,a:focus{
+	text-decoration: none;
+	color: #9b9b9b;
+	opacity: 0.9;
+	outline: none;
+}
+
+.btn {
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    font-size: 1.2em;
+    transition: 0.4s ease all;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.block_title {
+	color: #fff;
+    font-size: 4em;
+    font-weight: 300;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.block_title:before,.block_title:after {
+    content: "";
+    background: #fff;
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    width: 42%;
+    vertical-align: middle;
+}
+
+.block_title:before {
+    right: 0.5em;
+    margin-left: -42%;
+}
+
+.block_title:after {
+    left: 0.5em;
+    margin-right: -42%;
+}
+
+.btn-center {
+    display: block;
+    padding: 80px 0px 60px 0px;
+    text-align: center;
+}
+
+.big.button {
+    border: 1px solid #fff;
+    font-size: 2em;
+    color: #fff;
+    padding: 15px 30px;
+}
+
+.big.button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.button{
+	background: transparent;
+	border: 1px solid #fff;
+}
+
+.button:hover {
+    background: white;
+    color: #000;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+// - Background
+/////////////////////////////////////////////////////////////////////*/
+
+#background {
+	position:fixed;
+	z-index: -99;
+	width:100%;
+  	margin: 0px;
+  	padding: 0px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  02 - Header 
+/////////////////////////////////////////////////////////////////////*/
+
+.header{
+	width:100vw;
+	margin: 0px;
+	padding: 0px;
+}
+
+.scrollDown {
+    font-size: 4em;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    bottom: 10%;
+    left: 49%;
+}
+
+.scrollDown:hover{
+	color: rgba(255, 255, 255, 1);
+	transition: 0.4s ease all;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  03 - Navigation 
+/////////////////////////////////////////////////////////////////////*/
+
+#navigation{
+	background: #111;
+}
+
+.navigation-area {
+	width: 100vw;
+}
+
+.nav-wrap {
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+}
+
+.logo {
+	height: 76px;
+	display: table;
+	text-align: left;
+}
+
+.logo-text {
+    font-size: 3em;
+    padding: 0.2em 0;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    display: table-cell;
+	vertical-align: middle;
+}
+
+.menu {
+    font-size: 3em;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.dropdown-menu {
+	background-color: #111;
+    min-width: 240px;
+    border: 1px solid #000;
+    box-shadow: none;
+    border-radius: 0px;
+    margin-top: 5px;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 1em 2em;
+    margin-top: 5%;
+}
+
+.dropdown-menu ul li {
+    padding: 0.3em 0em 0.6em 0em;
+    font-size: 1.3em;
+    position: relative;
+}
+
+.dropdown-menu ul li a i {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    font-size: 25px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  04 - About
+/////////////////////////////////////////////////////////////////////*/
+
+.about-area {
+    padding: 40px 0px 40px 0px;
+	background-color: rgba(0, 0, 0, 0.9);
+	width: 100vw;
+	color: #fff;
+}
+
+.about-title {
+    font-weight: 300;
+    font-size: 3em;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+.moreDetails p, .moreDetails h2 {
+	text-align: center;
+}
+
+.headshot {
+	width: 100%;
+	height: auto;
+	border-radius: 3px;
+}
+
+.exp{
+	padding-top: 140px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  05 - Portfolio
+/////////////////////////////////////////////////////////////////////*/
+
+#portfolio {
+    padding: 80px 0px 0px 0px;
+}
+
+.portfolio-area {
+	background-color: #111;
+	width: 100vw;
+}
+
+.port {
+	list-style: none;
+	text-align: left;
+	padding-bottom: 40px;
+}
+
+.port .item {
+	display: inline-block;
+	text-align: left;
+	position: relative;
+}
+
+.port figure {
+	margin: 0;
+	position: relative;
+}
+
+.port figure img {
+	max-width: 100%;
+	display: block;
+	position: relative;
+}
+
+.port figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #111;
+	color: #e66f69;
+}
+
+.port figcaption h3 {
+	margin: 0px 0px 8px 0px;
+	padding: 0;
+	color: #fff;
+}
+
+.port figcaption span:before {
+	content: 'by ';
+}
+
+.port figcaption a {
+	text-align: center;
+	padding: 8px 15px;
+	display: inline-block;
+	color: #fff;
+}
+
+.port figure {
+	overflow: hidden;
+}
+
+.port figure img {
+	transition: transform 0.4s;
+}
+
+.port figure:hover img {
+	transform: translateY(-50px);
+}
+
+.port figcaption {
+	height: 100px;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	transform: translateY(100%);
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.port figure:hover figcaption {
+	opacity: 1;
+	transform: translateY(0px);
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.port figcaption a {
+	position: absolute;
+	bottom: 31px;
+	right: 20px;
+}
+
+.item-space {
+    margin-bottom: 30px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  05 - Skills
+/////////////////////////////////////////////////////////////////////*/
+
+#skills {
+    padding: 0px 0px 0px 0px;
+}
+
+.skills-area {
+	background-color: #111;
+	width: 100vw;
+}
+
+.skills {
+	list-style: none;
+	text-align: left;
+	padding-bottom: 40px;
+}
+
+.skills .item {
+	display: inline-block;
+	text-align: left;
+	position: relative;
+}
+
+.skills figure {
+	margin: 0;
+	position: relative;
+}
+
+.skills figure img {
+	width: 100%;
+	display: block;
+	position: relative;
+}
+
+.skills figure img {
+	transition: transform 0.4s;
+	margin-bottom: 20px;
+}
+
+.skills figure:hover img {
+	transform: scale(1.25);
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  06 - Experience 
+/////////////////////////////////////////////////////////////////////*/
+
+.experience-area {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 80px 0px 80px 0px;
+    color: #fff;
+    background-attachment: fixed;
+    background-size: cover;
+	width: 100vw;
+}
+
+.experience-block {
+    text-align: center;
+}
+
+.experience-block img {
+    border: 1px solid #000;
+    max-width: auto;
+    max-height: 200px;
+    margin-bottom: 30px;
+}
+
+.experience-block p {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.experience-block strong {
+	max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  07 - Contact
+/////////////////////////////////////////////////////////////////////*/
+
+.contact-area {
+	background-color: #111;
+	color: #fff;
+    position: relative;
+    min-height: 600px;
+	width: 100%;
+    padding: 80px 0px 60px 0px;
+}
+
+.con-title {
+    font-weight: 300;
+    font-size: 3em;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+.moreDetails p {
+    font-size: 16px;
+}
+
+.address {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0px 0px 0px;
+}
+
+.address li {
+    font-size: 1.1em;
+    position: relative;
+    margin-bottom: 3%;
+}
+
+.address li i {
+    font-size: 20px;
+    position: absolute;
+    top: 1px;
+}
+
+.address li span {
+    padding-bottom: 10px;
+    position: relative;
+    left: 30px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  09 - Responsive Fixes
+/////////////////////////////////////////////////////////////////////*/
+
+@media all and (min-width: 1400px) {
+	.centered p {
+		font-size: 3em;
+	}
+	.bigheadline {
+		font-size: 15em;
+	}
+	.subheadline {
+		font-size: 5em;
+	}
+}
+
+@media all and (max-width: 1200px) and (min-width: 992px) {
+
+	.services {
+		max-width: 293px;
+		height: 213px;
+	}
+	.service-wrap i {
+	    font-size: 4em;
+	    margin-top: 28px;
+	}
+	.service-wrap h3 {
+	    font-size: 1.4em;
+	}
+	.service-wrap p {
+	    font-size: 11px;
+	    padding: 0px 35px;
+	}
+}
+
+@media all and (max-width: 991px) and (min-width: 768px) {
+
+	.services {
+		max-width: 293px;
+		height: 293px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.service-wrap p {
+		padding: 0px 40px;
+		font-size: 14px;
+	}
+	.pe-dj {
+		font-size: 6em;
+	}
+
+}
+
+@media all and (max-width: 991px) {
+
+	header{
+		background: url(../images/bg-small.jpg) no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 50% -50px;
+	}
+}
+
+@media all and (max-width: 768px) {
+	.services {
+		max-width: 293px;
+		height: 293px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.pe-dj {
+		font-size: 6em;
+	}
+	.service-wrap i {
+		margin-top: 50px;
+	}
+	.centered p {
+		font-size: 2em;
+	}
+	.bigheadline {
+		font-size: 6em;
+	}
+	.subheadline {
+		font-size: 2em;
+	}
+	.item-space figure {
+	    max-width: 360px;
+	    margin: 0 auto;
+	}
+	.moreDetails {
+		margin-bottom: 60px;
+	}
+	.copyright, .designed {
+		text-align: center;
+	}
+	.scrollDown {
+	    top: 70%;
+	    left: 46%;
+	}
+}
+@media all and (max-width: 380px) {
+
+
+	.logo-text {
+	    font-size: 2em;
+		
+	}
+	.centered p {
+	    font-size: 1em;
+	}
+	.bigheadline {
+	    font-size: 4em;
+	}
+	.subheadline {
+	    font-family: 'Titillium Web',sans-serif;
+	    font-size: 1.5em;
+	    font-weight: 200;
+	    margin: 0;
+	}
+	.testimonila-block p {
+	    max-width: 90%;
+	}
+	.social-icons a {
+	    width: 30px;
+	    height: 30px;
+	}
+	
+}
+
+@media all and (max-width: 480px) {
+
+	.scrollDown {
+	    top: 70%;
+	    left: 44%;
+	}
+}

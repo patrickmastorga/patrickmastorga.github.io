@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Patrick Astorga</title>
+
+        <!-- meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <!-- stylesheets -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
+        <link rel="stylesheet" href="assets/font_icon/css/helper.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.css">
+        <link rel="stylesheet" href="assets/css/owl.theme.css">
+        <link rel="stylesheet" href="style.css">
+
+        <!-- google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
+
+        <!-- three.js imports -->
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+                    "OBJLoader": "https://unpkg.com/three@0.138.0/examples/jsm/loaders/OBJLoader",
+                    "MTLLoader": "https://unpkg.com/three@0.138.0/examples/jsm/loaders/MTLLoader",
+                    "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
+                }
+            }
+        </script>
+
+    </head>
+    <body id="body">
+        <!-- Backround -->
+        <canvas id="background"></canvas>
+        <script type="module" src="assets/js/background-three.js"></script>
+
+        
+        <!-- Header area -->
+        <div class="header" style="height:100vh;">
+            <div class="bottom">
+                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent"><i class="pe-7s-angle-down-circle pe-va"></i></a>
+            </div>
+        </div>
+
+
+        <!-- Navigation area -->
+        <section id="navigation" class="navigation-area">
+            <div style="height: 100px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6" style="white-space: nowrap;">
+                            <div class="logo"><a data-scroll href="#body" class="logo-text">Patrick Astorga</a></div>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <div class="nav">
+                                <a data-placement="bottom" title="Menu" class="menu" data-bs-toggle="dropdown"><i class="pe-7s-menu"></i></a>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li><a data-scroll href="#body">Home <i class="pe-7s-home"></i></a><span class="menu-effect"></span></li>
+                                        <li><a data-scroll href="#services">Service <i class="pe-7s-config"></i></a><span class="menu-effect"></span></li>
+                                        <li><a data-scroll href="#portfolio">Portfolio <i class="pe-7s-glasses"></i></a><span class="menu-effect"></span></li>
+                                        <li><a data-scroll href="#testimonial">Testimonial <i class="pe-7s-comment"></i><span class="menu-effect"></span></a></li>
+                                        <li><a data-scroll href="#contact">Contact <i class="pe-7s-help1"></i></a><span class="menu-effect"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>         
+        </section>
+
+
+        <!-- About Me section -->
+        <section id="about" class="about-area">
+            <div class="container">
+                <h2 class="block_title">About Me</h2>
+                <div class="row">
+                    <div class="col-xs-12">
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="headshot" src="assets/images/patrick1.jpg" alt="Patrick Astorga">
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="moreDetails">
+                            <h2 class="about-title">Hey, I'm Patrick Astorga</h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum animi repudiandae nihil aspernatur repellat temporibus doloremque sint ea laboriosam, excepturi iure inventore rerum voluptatibus, suscipit totam, sit necessitatibus. Rerum, blanditiis. </p>
+                        </div>
+                        <div class="btn-center"><a href="#" class="big button">My Resume</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Portfolio Area -->
+        <section id="portfolio" class="portfolio-area">
+            <div class="container">
+                <h2 class="block_title">Projects</h2>
+                <div class="row port">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item-space">
+                        <figure>
+                            <img src="assets/images/connect-four.png" alt="img04">
+                            <figcaption>
+                                <h3>Settings</h3>
+                                <span>Jacob Cummings</span>
+                                <a href="#" class="button" >Take a look</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item-space">
+                        <figure>
+                            <img src="assets/images/connect-four.png" alt="img01">
+                            <figcaption>
+                                <h3>Camera</h3>
+                                <span>Jacob Cummings</span>
+                                <a href="#" class="button" >Take a look</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item-space">
+                        <figure>
+                            <img src="assets/images/connect-four.png" alt="img02">
+                            <figcaption>
+                                <h3>Music</h3>
+                                <span>Jacob Cummings</span>
+                                <a href="#" class="button" >Take a look</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item-space">
+                        <figure>
+                            <img src="assets/images/connect-four.png" alt="img04">
+                            <figcaption>
+                                <h3>Settings</h3>
+                                <span>Jacob Cummings</span>
+                                <a href="#" class="button" >Take a look</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item-space">
+                        <figure>
+                            <img src="assets/images/connect-four.png" alt="img01">
+                            <figcaption>
+                                <h3>Camera</h3>
+                                <span>Jacob Cummings</span>
+                                <a href="#" class="button" >Take a look</a>
+                            </figcaption> 
+                        </figure>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 item-space">
+                        <figure>
+                            <img src="assets/images/connect-four.png" alt="img02">
+                            <figcaption>
+                                <h3>Music</h3>
+                                <span>Jacob Cummings</span>
+                                <a href="#" class="button" >Take a look</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="btn-center"><a href="#" class="big button">View all</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Skills Area -->
+        <section id="skills" class="skills-area">
+            <div class="container">
+                <h2 class="block_title">Skills</h2>
+                <div class="row justify-content-center skills">
+                    <!-- https://devicon.dev/ for coding language logos -->
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="java">
+                        </figure>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python">
+                        </figure>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="javascript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript">
+                        </figure>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="html5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html5">
+                        </figure>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="typescript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="typescript">
+                        </figure>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="css3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css3">
+                        </figure>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="bootstrap" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="bootstrap">
+                        </figure>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="cpp" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="cpp">
+                        </figure>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                        <figure>
+                            <img id="jquery" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jquery">
+                        </figure>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Experience Area -->
+        <section id="experience" class="experience-area">
+            <div class="container">
+                <h2 class="block_title">Experience</h2>
+                <div class="row">
+                    <div class="col-xs-12">
+                    </div>
+                    <div id="experience-container" class="col-xs-12">
+                        <div class="experience-block">
+                            <img src="assets/images/GeorgiaTech_RGB.svg" alt="clients" class="selfshot">
+                            <p>I'm a second year at Georgia Tech pursuing a Bachelor's degree in Mathematics concentrating in Probability & Statistics. I'm also pursuing a minor Computer Science with the Intelligence thread. I play defense on the Georgia Tech lacrosse team and a member of the Kappa Sigma fraternity.</p>
+                            <strong>Georgia Institute of Technology</strong>
+                            <br>
+                        </div>
+                        <div class="experience-block">
+                            <img src="assets/images/popelogo.png" alt="clients" class="selfshot">
+                            <p>Graduate class of 2022. My awards include National Merit Scholarship Finalist, PAGE Star Student Award, and AJC Cup winner. I played varsity football and lacrosse, and was a member of NHS and Model UN</p>
+                            <strong>Alan C. Pope High School</strong>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Area -->
+        <section id="contact" class="contact-area">
+            <div id="googleMap" style="width:100%;"></div>
+            <div id="contact-area">
+                <div class="container">
+                    <h2 class="block_title">Contact</h2>
+                    <div class="row">
+                        <div class="col-xs-12">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="moreDetails">
+                                <h2 class="con-title">More About me</h2>
+                                <p>Thank you for visiting my portfolio. I'm actively seeking professional experience in software engineering and computer science this summer. If you're a recruiter interested in my skills and experience, please don't hesitate to reach out. Let's discuss how I can contribute to your team's success.</p>
+                                <ul class="address">
+                                    <li><i class="pe-7s-map-marker"></i><span>182 6th St. NW,<br>Atlanta, GA 30332,<br>United States</span></li>
+                                    <li><i class="pe-7s-mail"></i><span>patrickmastorga@gmail.com</span></li>
+                                    <li><i class="pe-7s-phone"></i><span>+1(678)296-6683</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 d-flex justify-content-center">
+                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="patrickmastorga" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/patrickmastorga?trk=profile-badge"><h2 class="con-title">Connect with me</h2></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Necessery scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="assets/js/owl.carousel.js"></script>
+        <script src="assets/js/smooth-scroll.js"></script>
+        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
+
