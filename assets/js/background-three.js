@@ -39,8 +39,8 @@ scene.add(pointLight, ambientLight);
 
 //content
 
-const PATRICK_TEXTURE = new THREE.TextureLoader().load('../src/assets/images/patrick.jpg');
-const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('../src/assets/images/THE-BEST-BUZZCARD-PHOTO.jpg'), new THREE.TextureLoader().load('../src/assets/images/THE-WORST-BUZZCARD-PHOTO.jpg')];
+const PATRICK_TEXTURE = new THREE.TextureLoader().load('/assets/images/patrick.jpg');
+const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('/assets/images/THE-BEST-BUZZCARD-PHOTO.jpg'), new THREE.TextureLoader().load('/assets/images/THE-WORST-BUZZCARD-PHOTO.jpg')];
 
 const R_RANGE = [2, 100];
 const THETA_RANGE = [-Math.PI / 2, Math.PI / 2];
@@ -125,9 +125,9 @@ function addObject(materialSource, objectSource, x, y, z, scale, rotate) {
   );
 }
 
-addObject('../src/assets/models/o-letter.mtl', '../src/assets/models/o-letter.obj', -30, 0, -50, 250, true);
-addObject('../src/assets/models/s-letter.mtl', '../src/assets/models/s-letter.obj', 0, 0, -50, 250, true);
-addObject('../src/assets/models/i-letter.mtl', '../src/assets/models/i-letter.obj', 30, 0, -50, 250, true);
+addObject('/assets/models/o-letter.mtl', '/assets/models/o-letter.obj', -30, 0, -50, 250, true);
+addObject('/assets/models/s-letter.mtl', '/assets/models/s-letter.obj', 0, 0, -50, 250, true);
+addObject('/assets/models/i-letter.mtl', '/assets/models/i-letter.obj', 30, 0, -50, 250, true);
 
 // Background
 
