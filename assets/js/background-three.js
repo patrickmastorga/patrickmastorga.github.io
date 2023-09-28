@@ -87,15 +87,8 @@ const objectLoader = new OBJLoader();
 const materialLoader = new MTLLoader();
 
 let rotatingObjects = new Array();
-let repositionObjects = new Array(3);
 
-let distanceScrolled = 0;
-let buzz = false;
-let portfolioOffset = document.getElementById("portfolio").getBoundingClientRect().top - document.body.getBoundingClientRect().top;
-let contactOffset = document.getElementById("contact").getBoundingClientRect().top - document.body.getBoundingClientRect().top;
-
-
-function addObject(materialSource, objectSource, x, y, z, scale, rotx, roty, rotz, rotate, reposition) {
+function addObject(materialSource, objectSource, x, y, z, scale, rotx, roty, rotz, rotate) {
   // load a material
   materialLoader.load(
     // material URL
@@ -113,9 +106,6 @@ function addObject(materialSource, objectSource, x, y, z, scale, rotx, roty, rot
         (object) => {
           if (rotate) {
             rotatingObjects.push(object);
-          }
-          if (reposition >= 0) {
-            repositionObjects[reposition] = object;
           }
           object.scale.multiplyScalar(scale);
           object.position.set(x, y, z);
@@ -138,40 +128,15 @@ function addObject(materialSource, objectSource, x, y, z, scale, rotx, roty, rot
   );
 }
 
-let buzzPos = -(contactOffset - window.innerHeight) * 0.01 + 1;
-
 //add letters
 //addObject('/assets/models/o-letter.mtl', '/assets/models/o-letter.obj', -30, 0, -50, 250, 0, 0, 0, true);
 //addObject('/assets/models/s-letter.mtl', '/assets/models/s-letter.obj', 0, 0, -50, 250, 0, 0, 0, true);
 //addObject('/assets/models/i-letter.mtl', '/assets/models/i-letter.obj', 30, 0, -50, 250, 0, 0, 0, true);
-addObject('/assets/models/PATRICK.mtl', '/assets/models/PATRICK.obj', -28, 10, -50, 20, Math.PI / 2, 0, 0, false, -1);
-addObject('/assets/models/ASTORGA.mtl', '/assets/models/ASTORGA.obj', -30, -5, -50, 20, Math.PI / 2, 0, 0, false, -1);
-addObject('/assets/models/welcome.mtl', '/assets/models/welcome.obj', -3.55, -window.innerHeight * 0.0035, -6, 0.7, Math.PI / 2, 0, 0, false, 2);
-
-function buzzInit() {
-  addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', -6, buzzPos, -6, 0.07, 0, 0.5, 0, true, 0);
-  addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', 6, buzzPos, -6, 0.07, 0, -0.5, 0, true, 1);
-  //addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', -3.55, 0, -6, 0.7, Math.PI / 2, 0, 0, false);
-}
-
-if (document.body.getBoundingClientRect().top + portfolioOffset < 0) {
-  buzzInit()
-  buzz = true;
-}
-
-
-// Object posistion on resize
-
-function reposition() {
-  if (repositionObjects[0] != undefined && repositionObjects[1] != undefined) {
-    buzzPos = -(contactOffset - window.innerHeight / 2) * 0.01 + 1;
-    repositionObjects[0].position.y = buzzPos;
-    repositionObjects[1].position.y = buzzPos;
-  }
-  if (repositionObjects[2] != undefined) {
-    repositionObjects[2].position.y = -window.innerHeight * 0.0035;
-  }
-}
+addObject('/assets/models/PATRICK.mtl', '/assets/models/PATRICK.obj', -28, 10, -50, 20, Math.PI / 2, 0, 0, false);
+addObject('/assets/models/ASTORGA.mtl', '/assets/models/ASTORGA.obj', -30, -5, -50, 20, Math.PI / 2, 0, 0, false);
+addObject('/assets/models/welcome.mtl', '/assets/models/welcome.obj', -4.02, -3, -7.8, 0.8, Math.PI / 2, 0, 0, false);
+//addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', -6, buzzPos, -10, 0.1, 0, 0.5, 0, true);
+//addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', 6, buzzPos, -10, 0.1, 0, -0.5, 0, true);
 
 
 // Rotation of objects
@@ -235,21 +200,14 @@ window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-
-  portfolioOffset = document.getElementById("portfolio").getBoundingClientRect().top - document.body.getBoundingClientRect().top;
-  contactOffset = document.getElementById("contact").getBoundingClientRect().top - document.body.getBoundingClientRect().top;
-  reposition();
 }, false);
 
 // Scroll Animation
 
+let distanceScrolled
 document.body.onscroll = () => {
   distanceScrolled = document.body.getBoundingClientRect().top;
   camera.position.y = distanceScrolled * 0.01;
-  if (!buzz && distanceScrolled + portfolioOffset < 0) {
-    buzz = true;
-    buzzInit();
-  }
 };
 
 // Animation Loop
