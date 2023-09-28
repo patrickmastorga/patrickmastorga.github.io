@@ -40,7 +40,7 @@ scene.add(pointLight, ambientLight);
 //content
 
 const PATRICK_TEXTURE = new THREE.TextureLoader().load('/assets/images/patrick.jpg');
-const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('/assets/images/THE-BEST-BUZZCARD-PHOTO.jpg'), new THREE.TextureLoader().load('/assets/images/THE-WORST-BUZZCARD-PHOTO.jpg')];
+//const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('/assets/images/THE-BEST-BUZZCARD-PHOTO.jpg'), new THREE.TextureLoader().load('/assets/images/THE-WORST-BUZZCARD-PHOTO.jpg')];
 
 const R_RANGE = [2, 100];
 const THETA_RANGE = [-Math.PI / 2, Math.PI / 2];
@@ -128,13 +128,15 @@ function addObject(materialSource, objectSource, x, y, z, scale, rotx, roty, rot
   );
 }
 
+let sclaleDown = window.innerWidth / window.innerHeight < 0.78;
+
 //add letters
 //addObject('/assets/models/o-letter.mtl', '/assets/models/o-letter.obj', -30, 0, -50, 250, 0, 0, 0, true);
 //addObject('/assets/models/s-letter.mtl', '/assets/models/s-letter.obj', 0, 0, -50, 250, 0, 0, 0, true);
 //addObject('/assets/models/i-letter.mtl', '/assets/models/i-letter.obj', 30, 0, -50, 250, 0, 0, 0, true);
-addObject('/assets/models/PATRICK.mtl', '/assets/models/PATRICK.obj', -28, 10, -50, 20, Math.PI / 2, 0, 0, false);
-addObject('/assets/models/ASTORGA.mtl', '/assets/models/ASTORGA.obj', -30, -5, -50, 20, Math.PI / 2, 0, 0, false);
-addObject('/assets/models/welcome.mtl', '/assets/models/welcome.obj', -4.02, -3, -7.8, 0.8, Math.PI / 2, 0, 0, false);
+addObject('/assets/models/PATRICK.mtl', '/assets/models/PATRICK.obj', (sclaleDown ? -16.8 : -28), 10, -50, (sclaleDown ? 12 : 20), Math.PI / 2, 0, 0, false);
+addObject('/assets/models/ASTORGA.mtl', '/assets/models/ASTORGA.obj', (sclaleDown ? -18 : -30), (sclaleDown ? 0 : -5), -50, (sclaleDown ? 12 : 20), Math.PI / 2, 0, 0, false);
+addObject('/assets/models/welcome.mtl', '/assets/models/welcome.obj', (sclaleDown ? -3.02 : -4.02), (sclaleDown ? -2 : -3), -7.8, (sclaleDown ? 0.6 : 0.8), Math.PI / 2, 0, 0, false);
 //addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', -6, buzzPos, -10, 0.1, 0, 0.5, 0, true);
 //addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', 6, buzzPos, -10, 0.1, 0, -0.5, 0, true);
 
@@ -237,6 +239,8 @@ function animate() {
     updateRotation(dt);
 
     updateMovement(dt);
+
+    console.log(window.innerWidth / window.innerHeight);
 
     //controls.update();
 
