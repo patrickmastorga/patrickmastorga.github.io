@@ -17,7 +17,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 camera.position.setX(0);
-camera.position.setY(0);
+camera.position.setY(document.body.getBoundingClientRect().top * 0.01);
 camera.position.setZ(0);
 
 renderer.render(scene, camera);
@@ -44,7 +44,7 @@ const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('/assets/images/THE-BE
 
 const R_RANGE = [2, 100];
 const THETA_RANGE = [-Math.PI / 2, Math.PI / 2];
-const Y_RANGE = [-100, 50];
+const Y_RANGE = [-70, 50];
 
 const DENSITY = 4;
 
@@ -77,7 +77,9 @@ function addPatrick(element, index) {
   return patrick;
 }
 
+//add stars
 const stars = Array(Math.trunc((Y_RANGE[1] - Y_RANGE[0]) * DENSITY)).fill().map(addPatrick);
+
 
 // Add 3-d Objects
 
@@ -85,8 +87,15 @@ const objectLoader = new OBJLoader();
 const materialLoader = new MTLLoader();
 
 let rotatingObjects = new Array();
+let repositionObjects = new Array(3);
 
-function addObject(materialSource, objectSource, x, y, z, scale, rotate) {
+let distanceScrolled = 0;
+let buzz = false;
+let portfolioOffset = document.getElementById("portfolio").getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+let contactOffset = document.getElementById("contact").getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+
+
+function addObject(materialSource, objectSource, x, y, z, scale, rotx, roty, rotz, rotate, reposition) {
   // load a material
   materialLoader.load(
     // material URL
@@ -105,9 +114,13 @@ function addObject(materialSource, objectSource, x, y, z, scale, rotate) {
           if (rotate) {
             rotatingObjects.push(object);
           }
-
-          object.position.set(x, y, z);
+          if (reposition >= 0) {
+            repositionObjects[reposition] = object;
+          }
           object.scale.multiplyScalar(scale);
+          object.position.set(x, y, z);
+          object.rotation.set(rotx, roty, rotz);
+          
 
           scene.add(object);
         },
@@ -125,13 +138,41 @@ function addObject(materialSource, objectSource, x, y, z, scale, rotate) {
   );
 }
 
-addObject('/assets/models/o-letter.mtl', '/assets/models/o-letter.obj', -30, 0, -50, 250, true);
-addObject('/assets/models/s-letter.mtl', '/assets/models/s-letter.obj', 0, 0, -50, 250, true);
-addObject('/assets/models/i-letter.mtl', '/assets/models/i-letter.obj', 30, 0, -50, 250, true);
+let buzzPos = -(contactOffset - window.innerHeight) * 0.01 + 1;
 
-// Background
+//add letters
+//addObject('/assets/models/o-letter.mtl', '/assets/models/o-letter.obj', -30, 0, -50, 250, 0, 0, 0, true);
+//addObject('/assets/models/s-letter.mtl', '/assets/models/s-letter.obj', 0, 0, -50, 250, 0, 0, 0, true);
+//addObject('/assets/models/i-letter.mtl', '/assets/models/i-letter.obj', 30, 0, -50, 250, 0, 0, 0, true);
+addObject('/assets/models/PATRICK.mtl', '/assets/models/PATRICK.obj', -28, 10, -50, 20, Math.PI / 2, 0, 0, false, -1);
+addObject('/assets/models/ASTORGA.mtl', '/assets/models/ASTORGA.obj', -30, -5, -50, 20, Math.PI / 2, 0, 0, false, -1);
+addObject('/assets/models/welcome.mtl', '/assets/models/welcome.obj', -3.55, -window.innerHeight * 0.0035, -6, 0.7, Math.PI / 2, 0, 0, false, 2);
 
-scene.background = new THREE.Color('black');
+function buzzInit() {
+  addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', -6, buzzPos, -6, 0.07, 0, 0.5, 0, true, 0);
+  addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', 6, buzzPos, -6, 0.07, 0, -0.5, 0, true, 1);
+  //addObject('/assets/models/buzz.mtl', '/assets/models/buzz.obj', -3.55, 0, -6, 0.7, Math.PI / 2, 0, 0, false);
+}
+
+if (document.body.getBoundingClientRect().top + portfolioOffset < 0) {
+  buzzInit()
+  buzz = true;
+}
+
+
+// Object posistion on resize
+
+function reposition() {
+  if (repositionObjects[0] != undefined && repositionObjects[1] != undefined) {
+    buzzPos = -(contactOffset - window.innerHeight / 2) * 0.01 + 1;
+    repositionObjects[0].position.y = buzzPos;
+    repositionObjects[1].position.y = buzzPos;
+  }
+  if (repositionObjects[2] != undefined) {
+    repositionObjects[2].position.y = -window.innerHeight * 0.0035;
+  }
+}
+
 
 // Rotation of objects
 
@@ -144,6 +185,7 @@ function updateRotation(delta) {
     obj.rotation.y -= 0.001 * delta;
   });
 }
+
 
 // Movement of objects
 
@@ -185,21 +227,29 @@ function updateMovement(delta) {
   });
 }
 
+
 // Window Resize
 
 window.addEventListener('resize', () => {
+  // three.js stuff
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
+
+  portfolioOffset = document.getElementById("portfolio").getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+  contactOffset = document.getElementById("contact").getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+  reposition();
 }, false);
 
 // Scroll Animation
 
-let distanceScrolled = 0;
-
 document.body.onscroll = () => {
   distanceScrolled = document.body.getBoundingClientRect().top;
   camera.position.y = distanceScrolled * 0.01;
+  if (!buzz && distanceScrolled + portfolioOffset < 0) {
+    buzz = true;
+    buzzInit();
+  }
 };
 
 // Animation Loop
@@ -208,6 +258,7 @@ let isTabActive = true;
 
 window.onfocus = function() {
   isTabActive = true;
+  animate();
 };
 
 window.onblur = function() {
@@ -218,13 +269,12 @@ let t1 = Date.now();
 let t2, dt;
 
 function animate() {
-  requestAnimationFrame(animate);
-
-  t2 = Date.now();
-  dt = t2 - t1;
-  t1 = t2;
-
   if (isTabActive) {
+    requestAnimationFrame(animate);
+
+    t2 = Date.now();
+    dt = t2 - t1;
+    t1 = t2;
 
     updateRotation(dt);
 
