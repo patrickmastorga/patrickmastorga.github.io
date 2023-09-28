@@ -240,8 +240,6 @@ function animate() {
 
     updateMovement(dt);
 
-    console.log(window.innerWidth / window.innerHeight);
-
     //controls.update();
 
     renderer.render(scene, camera);
