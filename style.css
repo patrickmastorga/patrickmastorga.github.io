@@ -124,6 +124,12 @@ a:hover,a:active,a:focus{
 	padding: 0px;
 }
 
+#disclaimer {
+	color: black;
+	text-align: center;
+	padding-top: 40vh;
+}
+
 .scrollDown {
     font-size: 4em;
     color: rgba(255, 255, 255, 1);

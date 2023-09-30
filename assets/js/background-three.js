@@ -249,3 +249,5 @@ function animate() {
 }
 
 animate();
+
+document.getElementById("disclaimer").style.display = "none";
