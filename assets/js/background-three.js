@@ -39,7 +39,7 @@ scene.add(pointLight, ambientLight);
 
 //content
 
-const PATRICK_TEXTURE = new THREE.TextureLoader().load('/assets/images/patrick.jpg');
+const PATRICK_TEXTURE = new THREE.TextureLoader().load('/assets/images/patrick3.jpg');
 //const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('/assets/images/THE-BEST-BUZZCARD-PHOTO.jpg'), new THREE.TextureLoader().load('/assets/images/THE-WORST-BUZZCARD-PHOTO.jpg')];
 
 const R_RANGE = [2, 100];
