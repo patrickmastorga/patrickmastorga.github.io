@@ -109,6 +109,7 @@ a:hover,a:active,a:focus{
     height: 100px;
     position: fixed;
 	top: 0;
+    background-color: #111;
 	z-index: 9999;
 }
 

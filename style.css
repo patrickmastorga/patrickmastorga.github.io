@@ -122,6 +122,8 @@ a:hover,a:active,a:focus{
 	width:100vw;
 	margin: 0px;
 	padding: 0px;
+	justify-content: center;
+	text-align: center;
 }
 
 #disclaimer {
@@ -135,7 +137,6 @@ a:hover,a:active,a:focus{
     color: rgba(255, 255, 255, 1);
     position: absolute;
     bottom: 10%;
-    left: 49%;
 }
 
 .scrollDown:hover{
@@ -229,6 +230,7 @@ a:hover,a:active,a:focus{
     font-weight: 300;
     font-size: 3em;
     margin: 0;
+	padding-top: 50px;
     padding-bottom: 30px;
 }
 
@@ -439,7 +441,7 @@ a:hover,a:active,a:focus{
 	color: #fff;
     position: relative;
     min-height: 600px;
-	width: 100%;
+	width: 100vw;
     padding: 80px 0px 60px 0px;
 }
 
@@ -540,6 +542,8 @@ a:hover,a:active,a:focus{
 		background-attachment: fixed;
 		background-position: 50% -50px;
 	}
+
+	
 }
 
 @media all and (max-width: 768px) {

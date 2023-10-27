@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkers Project</title>
+    <title>HSCD Project</title>
 
     <!-- stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -32,16 +32,18 @@
 
     <!-- Project -->
     <div class="container project">
-        <h2 class="block_title">Checkers</h2>
+        <h2 class="block_title">Prototype Device</h2>
         <div class="row">
             <div class="col-12 col-lg-6">
                 <div class="moreDetails">
-                    <h2 class="project-title">Checkers Game</h2>
-                    <p>A couple months after I finished my Connect Four project, I decided that my goal was to code a chess program. To me, the natural first step was to first code a checkers program. So after brushing up on the rules of checkers again (can’t say it was ever my favorite game), I began adapting my Connect Four code. I was challenged by the development of efficient JavaScript code for generating legal checkers moves, and I spent a while researching checkers strategy for my heuristic rating function.</p>
-                    <p>Since I had most of the basics already figured out, I decided to start experimenting with optimizations that I would later implement in my chess program. I researched the minimax algorithm I was implementing, and learned about Alpha Beta pruning, which is a way to cut out branches of the decision tree while returning the same result. It wasn’t too much of a challenge to implement, however without also implementing move-ordering, it didn't yield too significant of an upgrade. I decided to leave it for the chess program. I already had a program that could beat me almost every time in checkers.</p>
-                    <p>Immediately after finishing the checkers program, I began working on chess. After a few days of gruesomely attempting to code all of the specific rules of chess, I decided that I was not nearly experienced enough yet to get a satisfactory program out of it, especially limited to JavaScript. Since I was getting ready for college at the time, I decided I would leave it for when I had time to learn a more powerful compiled language like C++ (especially since I had just learned about web assembly) so I could make something that could put up a challenge.</p>
+                    <h2 class="project-title">High School Concussion Detector</h2>
+                    <p>A couple of my friends and I had a club in high school where we invented things for fun. Our biggest project was a device to help detect concussions in contact sports in real time, preventing players from getting injured further. What began as a chaotic breadboard with a profusion of wires evolved into a sophisticated device consisting of a custom PCB integrated with a high-g accelerometer and a microcontroller. The output of the device is synchronized with a IoT network and a full-stack web application, enabling real-time data projection to coaches on the sidelines while managing a comprehensive database.</p>
+                    <p>We won 1st place and the Health and Medical Technology Award at the GT InVenture Prize High School Division State Finals, followed by 3rd place at the Invention Convention Worldwide U.S Nationals. Currently we are PATENT PENDING.</p>
                 </div>
                 <div class="row justify-content-center languages">
+                    <div class="col-2">
+                        <img id="cpp" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="cpp">
+                    </div>
                     <div class="col-2">
                         <img id="javascript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript">
                     </div>
@@ -52,16 +54,14 @@
                         <img id="css3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css3">
                     </div>
                 </div>
-                <div class="btn-center"><a href="https://github.com/patrickmastorga/checkers" class="big button" target="_blank" rel="noopener noreferrer">Source Code</a></div>
+                <div class="btn-center"><a href="https://docs.google.com/presentation/d/1RbSerI6hqiuCjXaHQGMyBiqbF_lGsl6SVi9Su-7fsg4/edit?usp=sharing" class="big button" target="_blank" rel="noopener noreferrer">See More</a></div>
             </div>
             <div class="col-12 col-lg-6 project-link">
-                <img id="project-img" src="../assets/images/checkers.png" alt="Checkers">
-                <a href="https://patrickmastorga.github.io/checkers/" target="_blank" rel="noopener noreferrer"><div id="project-overlay" class="overlay"><p>Click to play</p></div></a>
+                <img id="project-img" src="../assets/images/HSCD.png" alt="HSCD">
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
 </body>
 </html>
