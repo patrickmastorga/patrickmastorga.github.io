@@ -132,10 +132,15 @@ a:hover,a:active,a:focus{
 	padding-top: 40vh;
 }
 
+.bottom {
+	justify-content: center;
+	text-align: center;
+}
+
 .scrollDown {
     font-size: 4em;
     color: rgba(255, 255, 255, 1);
-    position: absolute;
+	position: absolute;
     bottom: 10%;
 }
 

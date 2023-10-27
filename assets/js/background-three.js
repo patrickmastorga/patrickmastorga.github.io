@@ -41,23 +41,20 @@ scene.add(pointLight, ambientLight);
 
 const PATRICK_TEXTURE = new THREE.TextureLoader().load('/assets/images/patrick3.jpg');
 //const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('/assets/images/THE-BEST-BUZZCARD-PHOTO.jpg'), new THREE.TextureLoader().load('/assets/images/THE-WORST-BUZZCARD-PHOTO.jpg')];
+const patrickMaterial = new THREE.MeshStandardMaterial({ map: PATRICK_TEXTURE });
+const sphereGeometry = new THREE.SphereGeometry(1, 24, 24);
 
-const R_RANGE = [2, 100];
-const THETA_RANGE = [-Math.PI / 2, Math.PI / 2];
+
+const R_RANGE = [2, 75];
+const THETA_RANGE = [-Math.PI / 3, Math.PI / 3];
 const Y_RANGE = [-70, 50];
 
-const DENSITY = 4;
+const DENSITY = 2;
 
 const SPEED_LIMIT = 25;
 const SPEED = 0.00005;
 
-function addPatrick(element, index) {
-  // Create the 3d object with patrick.jpg skin
-  const geometry = new THREE.SphereGeometry(1, 24, 24);
-  //const material = new THREE.MeshStandardMaterial({ map: PATRICK_TEXTURE });
-  const material = new THREE.MeshStandardMaterial({ map: PATRICK_TEXTURE });
-  const patrick = new THREE.Mesh(geometry, material);
-
+function generatePosition(patrick) {
   // Generate the position of the object (cylindrical coordinates)
   patrick.r = Math.sqrt(THREE.MathUtils.randFloat(R_RANGE[0] ** 2, R_RANGE[1] ** 2));
   patrick.theta = THREE.MathUtils.randFloat(THETA_RANGE[0], THETA_RANGE[1]);
@@ -68,17 +65,25 @@ function addPatrick(element, index) {
   patrick.vtheta = Math.random() * SPEED_LIMIT - SPEED_LIMIT / 2;
   patrick.vy = Math.random() * SPEED_LIMIT - SPEED_LIMIT / 2;
 
+  patrick.position.set(patrick.r * Math.sin(patrick.theta), patrick.y, -patrick.r * Math.cos(patrick.theta));
+}
+
+function addPatrick(element, index) {
+  // Create the 3d object with patrick.jpg skin
+  //const material = new THREE.MeshStandardMaterial({ map: PATRICK_TEXTURE });
+  const patrick = new THREE.Mesh(sphereGeometry, patrickMaterial);
+
   // Define the order of rotation
   patrick.rotation.order = 'YZX';
 
-  patrick.position.set(patrick.r * Math.sin(patrick.theta), patrick.y, -patrick.r * Math.cos(patrick.theta));
+  generatePosition(patrick);
 
   scene.add(patrick);
   return patrick;
 }
 
 //add stars
-const stars = Array(Math.trunc((Y_RANGE[1] - Y_RANGE[0]) * DENSITY)).fill().map(addPatrick);
+let stars = Array(Math.trunc((Y_RANGE[1] - Y_RANGE[0]) * DENSITY)).fill().map(addPatrick);
 
 
 // Add 3-d Objects
@@ -218,6 +223,10 @@ let isTabActive = true;
 
 window.onfocus = function() {
   isTabActive = true;
+  stars.forEach((patrick) => {
+    generatePosition(patrick);
+    scene.add(patrick);
+  });
   animate();
 };
 
