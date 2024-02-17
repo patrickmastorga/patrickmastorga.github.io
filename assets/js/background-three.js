@@ -1,7 +1,6 @@
-import * as THREE from "https://unpkg.com/three@0.138.0/build/three.module.js";
-import { OBJLoader } from "https://unpkg.com/three@0.138.0/examples/jsm/loaders/OBJLoader";
-import { MTLLoader } from "https://unpkg.com/three@0.138.0/examples/jsm/loaders/MTLLoader";
-//import { OrbitControls } from "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js";
+import * as THREE from 'three';
+import { OBJLoader } from 'OBJLoader'
+import { MTLLoader } from 'MTLLoader'
 
 // Setup
 
@@ -34,8 +33,6 @@ scene.add(pointLight, ambientLight);
 
 //const lightHelper = new THREE.PointLightHelper(pointLight)
 //const gridHelper = new THREE.GridHelper(200, 50);
-
-//const controls = new OrbitControls(camera, renderer.domElement);
 
 //content
 
@@ -248,8 +245,6 @@ function animate() {
     updateRotation(dt);
 
     updateMovement(dt);
-
-    //controls.update();
 
     renderer.render(scene, camera);
   } else {
