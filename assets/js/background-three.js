@@ -36,7 +36,7 @@ scene.add(pointLight, ambientLight);
 
 //content
 
-const PATRICK_TEXTURE = new THREE.TextureLoader().load('/assets/images/patrick3.jpg');
+const PATRICK_TEXTURE = new THREE.TextureLoader().load('/assets/images/patrick_face_small.webp');
 //const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('/assets/images/THE-BEST-BUZZCARD-PHOTO.jpg'), new THREE.TextureLoader().load('/assets/images/THE-WORST-BUZZCARD-PHOTO.jpg')];
 const patrickMaterial = new THREE.MeshStandardMaterial({ map: PATRICK_TEXTURE });
 const sphereGeometry = new THREE.SphereGeometry(1, 24, 24);
