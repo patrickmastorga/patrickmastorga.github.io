@@ -199,7 +199,6 @@ backface-visibility: hidden;
 transform-origin: 0 0; /* see note above */
 }
 .ldio-ibjk598wo4m div { box-sizing: content-box; }
-  
 
 
 /* ///////////////////////////////////////////////////////////////////// 
@@ -221,8 +220,8 @@ transform-origin: 0 0; /* see note above */
 }
 
 .bottom {
-	justify-content: center;
-	text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .scrollDown {
