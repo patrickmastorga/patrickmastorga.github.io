@@ -35,18 +35,26 @@ scene.add(pointLight, ambientLight);
 //const gridHelper = new THREE.GridHelper(200, 50);
 
 //content
-
+/*
 const PATRICK_TEXTURE = new THREE.TextureLoader().load('/assets/images/patrick_face_small.webp');
 //const HANDSOME_TEXTURES = [new THREE.TextureLoader().load('/assets/images/THE-BEST-BUZZCARD-PHOTO.jpg'), new THREE.TextureLoader().load('/assets/images/THE-WORST-BUZZCARD-PHOTO.jpg')];
 const patrickMaterial = new THREE.MeshStandardMaterial({ map: PATRICK_TEXTURE });
 const sphereGeometry = new THREE.SphereGeometry(1, 24, 24);
-
+//*/
+///*
+const GT_LOGO_TEXTURE = new THREE.TextureLoader().load( '/assets/images/GT_LOGO_GOLD.webp' );
+const GT_LOGO_MATERIAL = new THREE.SpriteMaterial( { map: GT_LOGO_TEXTURE } );
+const GT_LOGO_ASPECT = 510 / 318;
+const BUZZ_TEXTURE = new THREE.TextureLoader().load( '/assets/images/BUZZ.webp' );
+const BUZZ_MATERIAL = new THREE.SpriteMaterial( { map: BUZZ_TEXTURE } );
+const BUZZ_ASPECT = 400 / 440;
+//*/
 
 const R_RANGE = [2, 75];
 const THETA_RANGE = [-Math.PI / 3, Math.PI / 3];
 const Y_RANGE = [-70, 50];
 
-const DENSITY = 2;
+const DENSITY = 3;
 
 const SPEED_LIMIT = 25;
 const SPEED = 0.00005;
@@ -66,6 +74,7 @@ function generatePosition(patrick) {
 }
 
 function addPatrick(element, index) {
+/*
   // Create the 3d object with patrick.jpg skin
   //const material = new THREE.MeshStandardMaterial({ map: PATRICK_TEXTURE });
   const patrick = new THREE.Mesh(sphereGeometry, patrickMaterial);
@@ -77,6 +86,25 @@ function addPatrick(element, index) {
 
   scene.add(patrick);
   return patrick;
+//*/
+///*
+  if (index % 2 == 0) {
+    const GTSprite = new THREE.Sprite( GT_LOGO_MATERIAL );
+    GTSprite.scale.set(GT_LOGO_ASPECT * 1.5, 1.5, 1);  // You can adjust the scaling here if necessary
+    scene.add( GTSprite );
+
+    generatePosition(GTSprite);
+    return GTSprite
+  } else {
+    const GTSprite = new THREE.Sprite( BUZZ_MATERIAL );
+    GTSprite.scale.set(BUZZ_ASPECT * 2, 2, 1);  // You can adjust the scaling here if necessary
+    scene.add( GTSprite );
+
+    generatePosition(GTSprite);
+    return GTSprite
+  }
+  
+  //*/
 }
 
 //add stars
@@ -146,10 +174,12 @@ addObject('/assets/models/welcome.mtl', '/assets/models/welcome.obj', (sclaleDow
 // Rotation of objects
 
 function updateRotation(delta) {
+/*
   stars.forEach((star) => {
     star.rotation.y = (3 * Math.PI / 2) - star.theta;
     star.rotation.z = -Math.atan((star.position.y - camera.position.y) / star.r);
   });
+//*/
   rotatingObjects.forEach((obj) => {
     obj.rotation.y -= 0.001 * delta;
   });
