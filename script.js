@@ -63,10 +63,10 @@ $(document).ready(function() {
  
   $("#experience-container").owlCarousel({
  
-      navigation : false, // Show next and prev buttons
+      navigation : true, // Show next and prev buttons
       slideSpeed : 700,
       paginationSpeed : 400,
-      singleItem:true,
+      singleItem : true,
   });
  
 });

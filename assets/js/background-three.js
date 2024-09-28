@@ -246,26 +246,10 @@ document.body.onscroll = () => {
 
 // Animation Loop
 
-let isTabActive = true;
-
-window.onfocus = function() {
-  isTabActive = true;
-  stars.forEach((patrick) => {
-    generatePosition(patrick);
-    scene.add(patrick);
-  });
-  animate();
-};
-
-window.onblur = function() {
-  isTabActive = false;
-};
-
 let t1 = Date.now();
 let t2, dt;
 
 function animate() {
-  if (isTabActive) {
     requestAnimationFrame(animate);
 
     t2 = Date.now();
@@ -277,9 +261,6 @@ function animate() {
     updateMovement(dt);
 
     renderer.render(scene, camera);
-  } else {
-    t1 = Date.now();
-  }
 }
 
 animate();
