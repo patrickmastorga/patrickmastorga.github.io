@@ -19,8 +19,8 @@ yarn-debug.log*
 *.sublime-project
 
 # Lock files (optional)
-/package-lock.json
-/yarn.lock
+package-lock.json
+yarn.lock
 
 # Coverage reports
 /coverage/
