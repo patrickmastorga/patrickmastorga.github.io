@@ -44,7 +44,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(mtl|obj)$/,
+                test: /\.(mtl|obj|glb)$/,
                 type: 'asset/resource',
                 generator: {
                     filename: 'models/[name]-[hash][ext]'

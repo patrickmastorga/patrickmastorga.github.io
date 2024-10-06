@@ -6,17 +6,18 @@ import './index.html';
 import './style.css'
 
 import * as THREE from 'three'; // Import everything from Three.js
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'; // Import OBJLoader
-import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'; // Import MTLLoader
+//import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'; // Import OBJLoader
+//import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'; // Import MTLLoader
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'; // Import GTLFLoader
 
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css'; // Import Swiper styles
 
 import GT_LOGO_GOLD_IMAGE from './assets/images/GT_LOGO_GOLD.webp';
 import BUZZ_IMAGE from './assets/images/BUZZ.webp';
-import PATRICK_OBJECT from './assets/models/PATRICK.obj';
-import ASTORGA_OBJECT from './assets/models/ASTORGA.obj';
-import WELCOME_OBJECT from './assets/models/welcome.obj';
+import PATRICK_OBJECT from './assets/models/PATRICK.glb';
+import ASTORGA_OBJECT from './assets/models/ASTORGA.glb';
+import WELCOME_OBJECT from './assets/models/welcome.glb';
 
 ///////////////////////////////
 // Include Resume
@@ -149,22 +150,16 @@ let stars = Array(Math.trunc((Y_RANGE[1] - Y_RANGE[0]) * DENSITY)).fill().map(ad
 // Add 3-d Objects to the scene
 
 let rotating_objects = new Array();
-
-const white_material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-const object_loader = new OBJLoader();
+const gltf_loader = new GLTFLoader();
 
 function add_object(object_source, x, y, z, scale, rotx, roty, rotz, rotate) {
-    // load an object
-    object_loader.load(
+   // Load the GLB model
+   gltf_loader.load(
         // resource URL
-        object_source,
+        object_source, // This should be the path to your .glb file
         // called when resource is loaded
-        (object) => {
-            object.traverse((child) => {
-                if (child.isMesh) {
-                    child.material = white_material;
-                }
-            });
+        (gltf) => {
+            const object = gltf.scene; // The loaded model is stored in gltf.scene
 
             if (rotate) {
                 rotating_objects.push(object);
@@ -172,14 +167,18 @@ function add_object(object_source, x, y, z, scale, rotx, roty, rotz, rotate) {
             object.scale.multiplyScalar(scale);
             object.position.set(x, y, z);
             object.rotation.set(rotx, roty, rotz);
-            
 
+            // Add the object to the scene
             scene.add(object);
         },
-        // called when loading is in progresses
-        (xhr) => { console.log(`Object ${xhr.loaded / xhr.total * 100}% loaded`) },
+        // called when loading is in progress
+        (xhr) => {
+            console.log(`Model ${xhr.loaded / xhr.total * 100}% loaded`);
+        },
         // called when loading has errors
-        (error) => { console.log(`An error happened: ${error}`) }
+        (error) => {
+            console.error(`An error happened: ${error}`);
+        }
     );
 }
 
@@ -260,5 +259,3 @@ function animate() {
 }
 
 animate();
-
-document.getElementById("disclaimer").style.display = "none";

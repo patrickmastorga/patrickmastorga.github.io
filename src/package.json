@@ -31,6 +31,7 @@
     "@fontsource/titillium-web": "^5.1.0",
     "bootstrap": "^5.3.3",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.1.1",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.0",
     "swiper": "^11.1.14",
