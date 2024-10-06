@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Engine Project</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container top">
+        <div class="row">
+            <div class="col-6" style="white-space: nowrap;">
+                <div class="logo"><a href="/index.html#navigation" class="logo-text">Patrick Astorga</a></div>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <div class="home-icon"><a href="/index.html#navigation"><i class="pe-7s-home"></i></a></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project -->
+    <div class="container project">
+        <h2 class="block_title">Chess Engine</h2>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="moreDetails">
+                    <h2 class="project-title">Chess Engine</h2>
+                    <p>By far the biggest and most challenging personal project I’ve worked on. Creating a chess engine from scratch has been one of my biggest personal goals, so my motivation was plenty. Since chess is a game that I actually play often, I enjoyed injecting some of my own strategy and knowledge into my program.</p>
+                    <p>It began with my choice to pick up a lower level language before beginning this project. Although I enjoyed programming in Python and JavaScript, I knew that I would have trouble getting good performance with their many levels of abstraction. I decided to get muddy with C++, because although the learning curve is high, I was attracted to the large standard library and was used to C-style syntax. It took me many days before I got a good enough grasp on the language.</p>
+                    <p>I spent a while on the design decisions (move/board representations, class hierarchies, etc.). It was the first time I felt like I was making something big. I decided to incorporate the object-oriented nature of C++ into my design decisions, while making sure that no performance would be hindered. After weeks of not super fun work, I had the skeleton of a chess engine, move generation, complete. After extensive testing, I was sure that I had implemented all the complex rules of chess correctly. The fun part could begin.</p>
+                    <p>I had implemented the minimax algorithm half a dozen times by now, so I was excited to experiment with ways to make it faster. I learned about the iterative deepening framework, and how it can be used with transposition tables and move ordering to make alpha-beta pruning extremely effective. I learned about killer moves, PV/null-window search, and search extensions. I found myself going down rabbit-holes on chessprogramming.org for hours. With a relatively simple static evaluation function, I implemented many of these optimizations, and found myself quite the formidable opponent.</p>
+                    <p>I collected thousands of chess positions to test the engine with, so I could tune parameters and change methods in the search algorithm. I'm working on a sparring-program to have two different versions of my engine play against each other in a variety of positions. The current version is stronger than I ever expected I could accomplish.</p>
+                    <p>UPDATE: Interested in the modern machine learning approaches to chess engines that are so common today, I went on the journey of creating my own neural network evaluation function. Since my engine is inspired by stockfish, I dove into their documentation. I read all about their very unique approach to a neural network evaluation function, NNUE. They utilize a very unique network shape and board vectorization that allows for very efficient inference. I decided it would be fun to try and do it on my own.</p>
+                    <p>I collected a large amount of position/evaluation pairs from across the internet, threw them together in python with pandas, and trained a neural network model using pytorch. I then extracted the weights, and went about the process of integer quantization. I coded my own implementation of the trained network in C++ using intrinsic vectorized CPU operations of the quantized network. You can view more about the process <a href="https://docs.google.com/presentation/d/1s1nyfDDmrYSHd1BAEGF44DxgN6YgCsJuAPD5Ecybjgk/edit?usp=sharing" target="_blank" rel="noopener noreferrer">HERE</a>.</p>
+                    <p>I don’t have anything that you can play online right now, but feel free to check out the source code, and see what features I am currently working on. I wrote a simple chess GUI so you can play against my latest engine.</p>
+                </div>
+                <div class="row justify-content-center languages">
+                    <div class="col-2">
+                        <img id="cpp" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="cpp">
+                    </div>
+                </div>
+                <div class="btn-center"><a href="https://github.com/patrickmastorga/Chess" class="big button" target="_blank" rel="noopener noreferrer">Source Code</a></div>
+            </div>
+            <div class="col-12 col-lg-6 project-link">
+                <img id="project-img" src="../assets/images/chess.webp" alt="chess">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

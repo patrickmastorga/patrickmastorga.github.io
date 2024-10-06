@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkers Project</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container top">
+        <div class="row">
+            <div class="col-6" style="white-space: nowrap;">
+                <div class="logo"><a href="/index.html#navigation" class="logo-text">Patrick Astorga</a></div>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <div class="home-icon"><a href="/index.html#navigation"><i class="pe-7s-home"></i></a></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project -->
+    <div class="container project">
+        <h2 class="block_title">Checkers</h2>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="moreDetails">
+                    <h2 class="project-title">Checkers Game</h2>
+                    <p>A couple months after I finished my Connect Four project, I decided that my goal was to code a chess program. To me, the natural first step was to first code a checkers program. So after brushing up on the rules of checkers again (can’t say it was ever my favorite game), I began adapting my Connect Four code. I was challenged by the development of efficient JavaScript code for generating legal checkers moves, and I spent a while researching checkers strategy for my heuristic rating function.</p>
+                    <p>Since I had most of the basics already figured out, I decided to start experimenting with optimizations that I would later implement in my chess program. I researched the minimax algorithm I was implementing, and learned about Alpha Beta pruning, which is a way to cut out branches of the decision tree while returning the same result. It wasn’t too much of a challenge to implement, however without also implementing move-ordering, it didn't yield too significant of an upgrade. I decided to leave it for the chess program. I already had a program that could beat me almost every time in checkers.</p>
+                    <p>Immediately after finishing the checkers program, I began working on chess. After a few days of gruesomely attempting to code all of the specific rules of chess, I decided that I was not nearly experienced enough yet to get a satisfactory program out of it, especially limited to JavaScript. Since I was getting ready for college at the time, I decided I would leave it for when I had time to learn a more powerful compiled language like C++ (especially since I had just learned about web assembly) so I could make something that could put up a challenge.</p>
+                </div>
+                <div class="row justify-content-center languages">
+                    <div class="col-2">
+                        <img id="javascript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript">
+                    </div>
+                    <div class="col-2">
+                        <img id="html5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html5">
+                    </div>
+                    <div class="col-2">
+                        <img id="css3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css3">
+                    </div>
+                </div>
+                <div class="btn-center"><a href="https://github.com/patrickmastorga/checkers" class="big button" target="_blank" rel="noopener noreferrer">Source Code</a></div>
+            </div>
+            <div class="col-12 col-lg-6 project-link">
+                <img id="project-img" src="../assets/images/checkers.webp" alt="Checkers">
+                <a href="https://patrickmastorga.github.io/checkers/" target="_blank" rel="noopener noreferrer"><div id="project-overlay" class="overlay"><p>Click to play</p></div></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
