@@ -59,7 +59,27 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: ['html-loader'], // Ensure images in HTML get processed
+                loader: "html-loader",
+                options: {
+                    sources: {
+                        list: [
+                            '...', // keep all default processing (img/src, etc.)
+                            { // custom processing for <a> tags with class "asset"
+                                tag: "a",
+                                attribute: "href",
+                                type: "src",
+                                filter: (tag, attribute, attributes, resourcePath) => {
+                                    for (let attr of attributes) {
+                                        if (attr.name === 'class' && attr.value.includes('source')) {
+                                            return true;
+                                        }
+                                    }
+                                    return false;
+                                }
+                            },
+                        ],
+                    },
+                },
             },
         ],
     },

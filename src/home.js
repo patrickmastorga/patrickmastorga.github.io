@@ -20,13 +20,6 @@ import ASTORGA_OBJECT from './assets/models/ASTORGA.glb';
 import WELCOME_OBJECT from './assets/models/welcome.glb';
 
 ///////////////////////////////
-// Include Resume
-///////////////////////////////
-
-import resume from './assets/documents/Patrick Astorga Resume.pdf'; // Import the PDF
-document.querySelector('.btn-center a').href = resume; // Set the href attribute
-
-///////////////////////////////
 // Initialize Swiper
 ///////////////////////////////
 
