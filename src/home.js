@@ -13,8 +13,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'; // Import
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css'; // Import Swiper styles
 
-import GT_LOGO_GOLD_IMAGE from './assets/images/GT_LOGO_GOLD.webp';
-import BUZZ_IMAGE from './assets/images/BUZZ.webp';
+import GT_LOGO_GOLD_IMAGE from './assets/images/gt-logo-gold.webp';
+import BUZZ_IMAGE from './assets/images/buzz.webp';
 import PATRICK_OBJECT from './assets/models/PATRICK.glb';
 import ASTORGA_OBJECT from './assets/models/ASTORGA.glb';
 import WELCOME_OBJECT from './assets/models/welcome.glb';
